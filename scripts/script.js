@@ -18,3 +18,9 @@ for (let i = 0; i < 256; i++) {
 $board.replaceChildren(...$children);
 
 const $square = document.querySelectorAll('.square');
+
+$square.forEach((element) => {
+  element.addEventListener('mouseenter', () => {
+    element.setAttribute('class', 'square passed');
+  });
+});
