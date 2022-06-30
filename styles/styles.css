@@ -1,0 +1,21 @@
+h1, h2 {
+  text-align: center;
+}
+
+#button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 512px;
+  height: 512px;
+  margin: 0 auto;
+}
+
+.square {
+  border: 1px solid black;
+}
