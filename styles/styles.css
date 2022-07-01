@@ -2,18 +2,30 @@ h1, h2 {
   text-align: center;
 }
 
+h1 {
+  font-size: 26pt;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 18pt;
+  margin-bottom: 10px;
+}
+
 #button-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 #board {
   display: flex;
   flex-wrap: wrap;
-  width: 512px;
-  height: 512px;
+  width: 1px;
+  height: 1px;
   margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .square {
@@ -26,4 +38,10 @@ h1, h2 {
 
 .passed {
   background-color: brown;
+}
+
+footer {
+  font-size: 14pt;
+  text-align: center;
+  font-weight: bolder;
 }

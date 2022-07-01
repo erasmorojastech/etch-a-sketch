@@ -1,26 +1,37 @@
 'use strict'
 
-const $board = document.querySelector('#board'),
-  $children = [];
+const $gridSize = document.querySelector('#grid-size'),
+  $board = document.querySelector('#board');
 
-for (let i = 0; i < 256; i++) {
+$gridSize.addEventListener('click', () => {
+  let grid = Number(prompt('Grid Size')),
+    $children = [];
 
-  // Create a new element
-  let $square = document.createElement("div")
-  $square.setAttribute('class', 'square');
-  $square.style.cssText = `width: 32px; height: 32px;`
+  // Validations
+  if (Number.isInteger(grid) === false) return alert('Enter a valid Number between 2 and 100');
+  if (grid <= 1 || grid > 100) return alert('The Grid Size must be between 2 and 100');
 
-  // Creating a tree of elements
-  $children.push($square);
-}
+  $board.style.cssText = `width: 960px; height: 960px;`;
 
-// Adding the tree of elements to the parent container
-$board.replaceChildren(...$children);
+  for (let i = 0; i < (grid * grid); i++) {
 
-const $square = document.querySelectorAll('.square');
+    // Create a new element
+    let $square = document.createElement("div")
+    $square.setAttribute('class', 'square');
+    $square.style.cssText = `width: ${960 / grid}px; height: ${960 / grid}px;`;
 
-$square.forEach((element) => {
-  element.addEventListener('mouseenter', () => {
-    element.setAttribute('class', 'square passed');
+    // Insert the new element before the first child
+    $children.push($square);
+  }
+  $board.replaceChildren(...$children);
+});
+
+// Event that paints the squares of the board
+$board.addEventListener('mouseenter', () => {
+  const $display = $board.childNodes;
+  $display.forEach((element) => {
+    element.addEventListener('mouseenter', () => {
+      element.setAttribute('class', 'square passed');
+    });
   });
 });
