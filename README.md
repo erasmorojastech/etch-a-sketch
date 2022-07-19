@@ -14,6 +14,6 @@ This project is created using:
 * JavaScript
 
 ## Project status
-Here is a [live preview](https://erasmorojastech.github.io/etch-a-sketch/) of the project
+Here is a [live preview](https://erasmorojastech.github.io/etch-a-sketch/) of the project.  
 In process...
 
